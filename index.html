@@ -3,10 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">    
     <title>Instagram API Sandbox</title>
 </head>
 <body>
-    <h1>Instagram API Sandbox</h1>
+    <div id="app">
+        <h1>Instagram API Sandbox</h1>
+        <hr>
+        <h6>Get Media</h6>
+        <p><span>Ref: <a href="https://developers.facebook.com/docs/instagram-basic-display-api/reference/media#">Media Docs</a></span></p>
+        <div class="media">
+            <div class="media-item" v-for="img in media" >
+                <img :src="img.media_url" :alt="img.id">
+                <p>Username: {{img.username}}</p>
+                <p>ID: {{img.id}}</p>
+                <p>Type: {{img.media_type}}</p>
+                <p>Caption: {{img.caption}}</p>
+                <a :href="img.permalink" target="_blank">Permalink</a>
+            </div>
+        </div>
+        <hr>
+
+        <h6>Get Children Content From Album</h6>
+        <p><span>Ref: <a href="https://developers.facebook.com/docs/instagram-basic-display-api/reference/media/children">Media Docs</a></span></p>
+        <div class="media">
+            <div class="media-item" v-for="img in album" >
+                <img :src="img.media_url" :alt="img.id">
+                <p>Username: {{img.username}}</p>
+                <p>ID: {{img.id}}</p>
+                <p>Type: {{img.media_type}}</p>
+                <a :href="img.permalink" target="_blank">Permalink</a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script src="js/app.js"></script>
 
 
 </body>
