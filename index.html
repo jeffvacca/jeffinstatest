@@ -9,6 +9,21 @@
 <body>
     <div id="app">
         <h1>Instagram API Sandbox</h1>
+        <h2>Instagram Basic Display API</h2>
+        <h3>Basic API is Read Only</h3>
+        <p>This is enough for us to create a basic instagram gallery from user content.  However, the Basic Display API is for consumer accounts only.  For business accounts, we need to look at the Graph API.  The process for generating auth tokens is complicated and needs more research.</p>
+        <h4>Outstanding Questions</h4>
+        <ul>
+            <li>Business vs non business user.  Is it safe to assume that our users will be using Business level Instagram accounts?</li>
+            <li>Process for switching from dev mode to production.</li>
+            <li>App review process.</li>
+            <li>How long do the access tokens persist.</li>
+        </ul>
+        <h4>To Do:</h4>
+        <ul>
+            <li>Set up an instagram business account and play with the Graph API which is for business purposes.</li>
+
+        </ul>
         <hr>
         <h6>Get Media</h6>
         <p><span>Ref: <a href="https://developers.facebook.com/docs/instagram-basic-display-api/reference/media#">Media Docs</a></span></p>
@@ -25,7 +40,7 @@
         <hr>
 
         <h6>Get Children Content From Album</h6>
-        <p><span>Ref: <a href="https://developers.facebook.com/docs/instagram-basic-display-api/reference/media/children">Media Docs</a></span></p>
+        <p><span>Ref: <a href="https://developers.facebook.com/docs/instagram-basic-display-api/reference/media/children">Children Docs</a></span></p>
         <div class="media">
             <div class="media-item" v-for="img in album" >
                 <img :src="img.media_url" :alt="img.id">
