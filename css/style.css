@@ -13,9 +13,10 @@
 
 .media .media-item{
     max-width:200px;
-    max-height:250px;
+    max-height:450px;
     margin-bottom:30px;
     padding:10px;
+    overflow: hidden;
 }
 
 p, a{
