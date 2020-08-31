@@ -10,22 +10,10 @@
     <div id="app">
         <h1>Instagram API Sandbox</h1>
         <h2>Instagram Basic Display API</h2>
-        <h3>Basic API is Read Only</h3>
-        <p>This is enough for us to create a basic instagram gallery from user content.  However, the Basic Display API is for consumer accounts only.  For business accounts, we need to look at the Graph API.  The process for generating auth tokens is complicated and needs more research.</p>
-        <h4>Outstanding Questions</h4>
-        <ul>
-            <li>Business vs non business user.  Is it safe to assume that our users will be using Business level Instagram accounts?</li>
-            <li>Process for switching from dev mode to production.</li>
-            <li>App review process.</li>
-            <li>How long do the access tokens persist.</li>
-        </ul>
-        <h4>To Do:</h4>
-        <ul>
-            <li>Set up an instagram business account and play with the Graph API which is for business purposes.</li>
-
-        </ul>
+        <h3>Basic API is Read Only and is intended for Non Business Level accounts</h3>
+        <p>This is enough for us to create a basic instagram gallery from user content.  However, the Basic Display API is for consumer accounts only.  For business accounts, we need to look at the Graph API (below).  The process for generating auth tokens is complicated and needs more research.</p>
         <hr>
-        <h6>Get Media</h6>
+        <h6>Get User Media</h6>
         <p><span>Ref: <a href="https://developers.facebook.com/docs/instagram-basic-display-api/reference/media#">Media Docs</a></span></p>
         <div class="media">
             <div class="media-item" v-for="img in media" >
@@ -39,7 +27,7 @@
         </div>
         <hr>
 
-        <h6>Get Children Content From Album</h6>
+        <h6>Get Children Content From User Album</h6>
         <p><span>Ref: <a href="https://developers.facebook.com/docs/instagram-basic-display-api/reference/media/children">Children Docs</a></span></p>
         <div class="media">
             <div class="media-item" v-for="img in album" >
@@ -103,17 +91,10 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
+    <hr>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-    
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -129,25 +110,12 @@
             function statusChangeCallback(response){
                 console.log('statuChangeCallback');
                 console.log(response);
-
             };
-
-
         };
       </script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-          
-    <!-- <script>
-
-      
-    </script> -->
-
-    
+              
     <script src="js/app.js"></script>
-
-
-
-
 
 </body>
 </html>
